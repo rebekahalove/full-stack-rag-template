@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "name": "starter-grounding-set",
+  "description": "Small smoke-test dataset; replace it with reviewed project questions.",
+  "documents": [
+    {
+      "id": "benefits-example",
+      "media_type": "text/markdown",
+      "content": "# Benefits\n\n## Medical\n\nMedical coverage begins on an employee's first day.\n\n## Retirement\n\nThe company matches retirement contributions up to four percent.",
+      "expected_keywords": ["medical coverage", "retirement contributions"],
+      "questions": [
+        {
+          "id": "medical-start",
+          "question": "When does medical coverage begin?",
+          "reference_answers": ["Medical coverage begins on the employee's first day."],
+          "expected_answer_keywords": ["first day"],
+          "expected_sources": [
+            {"keywords": ["medical coverage", "first day"]}
+          ]
+        }
+      ]
+    }
+  ]
+}

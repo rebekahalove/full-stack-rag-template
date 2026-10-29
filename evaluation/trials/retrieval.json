@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "trials": [
+    {
+      "id": "configured-baseline",
+      "description": "Uses the retrieval configuration from .env as the control.",
+      "tags": ["baseline", "retrieval"],
+      "parameters": {}
+    },
+    {
+      "id": "precision-oriented",
+      "description": "Returns fewer final passages to reduce distracting context.",
+      "tags": ["retrieval", "precision"],
+      "parameters": {
+        "retrieval.candidates_per_method": 12,
+        "retrieval.final_count": 4,
+        "retrieval.rrf_k": 60,
+        "retrieval.near_duplicate_threshold": 0.9
+      }
+    },
+    {
+      "id": "balanced-six",
+      "description": "A moderate candidate pool with six final passages.",
+      "tags": ["retrieval", "balanced"],
+      "parameters": {
+        "retrieval.candidates_per_method": 20,
+        "retrieval.final_count": 6,
+        "retrieval.rrf_k": 60,
+        "retrieval.near_duplicate_threshold": 0.9
+      }
+    },
+    {
+      "id": "recall-oriented",
+      "description": "Searches and returns more passages for multi-section questions.",
+      "tags": ["retrieval", "recall"],
+      "parameters": {
+        "retrieval.candidates_per_method": 32,
+        "retrieval.final_count": 10,
+        "retrieval.rrf_k": 60,
+        "retrieval.near_duplicate_threshold": 0.88
+      }
+    }
+  ]
+}

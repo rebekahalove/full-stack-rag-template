@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "trials": [
+    {
+      "id": "configured-baseline",
+      "description": "Uses the providers and models selected in .env.",
+      "tags": ["baseline"],
+      "parameters": {}
+    },
+    {
+      "id": "larger-chunks",
+      "description": "Compares a larger chunk target while keeping providers fixed.",
+      "parameters": {
+        "chunking.target_tokens": 800,
+        "chunking.max_tokens": 1100,
+        "chunking.overlap_tokens": 100
+      }
+    }
+  ]
+}

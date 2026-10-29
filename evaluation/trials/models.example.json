@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "trials": [
+    {
+      "id": "configured-baseline",
+      "description": "Uses the embedding and chat providers selected in .env. Run this first as the cost-controlled control.",
+      "tags": ["baseline", "models"],
+      "parameters": {}
+    },
+    {
+      "id": "openai-small-mini",
+      "description": "Example OpenAI pairing. Requires OPENAI_API_KEY.",
+      "tags": ["models", "paid", "requires-openai"],
+      "parameters": {
+        "embeddings.provider": "openai",
+        "embeddings.model": "text-embedding-3-small",
+        "embeddings.dimensions": 1536,
+        "embeddings.send_dimensions": true,
+        "generation.provider": "openai",
+        "generation.model": "gpt-4.1-mini"
+      }
+    },
+    {
+      "id": "google-gemini",
+      "description": "Example Google embedding and Gemini chat pairing. Requires GOOGLE_API_KEY or GEMINI_API_KEY.",
+      "tags": ["models", "paid", "requires-google"],
+      "parameters": {
+        "embeddings.provider": "google",
+        "embeddings.model": "gemini-embedding-001",
+        "embeddings.dimensions": 1536,
+        "embeddings.document_input_type": "auto",
+        "embeddings.query_input_type": "auto",
+        "generation.provider": "google",
+        "generation.model": "gemini-2.5-flash"
+      }
+    },
+    {
+      "id": "voyage-anthropic",
+      "description": "Example specialist Voyage embeddings with Anthropic chat. Requires VOYAGE_API_KEY and ANTHROPIC_API_KEY.",
+      "tags": ["models", "paid", "requires-voyage", "requires-anthropic"],
+      "parameters": {
+        "embeddings.provider": "voyage",
+        "embeddings.model": "voyage-3.5",
+        "embeddings.dimensions": 1024,
+        "embeddings.document_input_type": "auto",
+        "embeddings.query_input_type": "auto",
+        "generation.provider": "anthropic",
+        "generation.model": "claude-sonnet-4-5"
+      }
+    },
+    {
+      "id": "cohere-command",
+      "description": "Example all-Cohere pairing. Requires COHERE_API_KEY.",
+      "tags": ["models", "paid", "requires-cohere"],
+      "parameters": {
+        "embeddings.provider": "cohere",
+        "embeddings.model": "embed-v4.0",
+        "embeddings.dimensions": 1536,
+        "embeddings.document_input_type": "auto",
+        "embeddings.query_input_type": "auto",
+        "generation.provider": "cohere",
+        "generation.model": "command-a-03-2025"
+      }
+    },
+    {
+      "id": "ollama-local",
+      "description": "Example local pairing. Requires an Ollama server with both models pulled; it does not require paid API calls.",
+      "tags": ["models", "local", "requires-ollama"],
+      "parameters": {
+        "embeddings.provider": "ollama",
+        "embeddings.model": "nomic-embed-text",
+        "embeddings.dimensions": 768,
+        "generation.provider": "ollama",
+        "generation.model": "llama3.2"
+      }
+    }
+  ]
+}

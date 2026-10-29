@@ -1,0 +1,13 @@
+{
+  "name": "full-stack-rag-template-e2e",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest"
+  }
+}

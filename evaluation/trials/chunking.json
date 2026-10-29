@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "trials": [
+    {
+      "id": "configured-baseline",
+      "description": "Uses the chunking configuration from .env as the control.",
+      "tags": ["baseline", "chunking"],
+      "parameters": {}
+    },
+    {
+      "id": "compact-350",
+      "description": "Smaller chunks intended to improve precision for short factual passages.",
+      "tags": ["chunking", "single-variable-family"],
+      "parameters": {
+        "chunking.target_tokens": 350,
+        "chunking.min_tokens": 100,
+        "chunking.max_tokens": 500,
+        "chunking.overlap_tokens": 50
+      }
+    },
+    {
+      "id": "balanced-600",
+      "description": "General-purpose middle setting suitable for mixed business documents.",
+      "tags": ["chunking", "single-variable-family"],
+      "parameters": {
+        "chunking.target_tokens": 600,
+        "chunking.min_tokens": 150,
+        "chunking.max_tokens": 900,
+        "chunking.overlap_tokens": 80
+      }
+    },
+    {
+      "id": "context-heavy-900",
+      "description": "Larger chunks intended to preserve context for synthesis questions.",
+      "tags": ["chunking", "single-variable-family"],
+      "parameters": {
+        "chunking.target_tokens": 900,
+        "chunking.min_tokens": 250,
+        "chunking.max_tokens": 1200,
+        "chunking.overlap_tokens": 120
+      }
+    }
+  ]
+}
